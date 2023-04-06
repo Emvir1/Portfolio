@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/bfc5c28a03.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/logo.png" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#services">Projects</a></li>
+            <li><a href="#portfolio">Tools</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          <p>Full Stack Web Developer</p>
+          <h1>
+            <span>Hi,</span> I'm Emvir<br />
+            Rivera
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- about page -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/formal1.jpg" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              I am very interested in joining the Developer field, Hence I
+              enrolled in a Zuitt Coding Bootcamp for a refresher. Since I
+              graduated back at 2019 in STI College Taft with a bacheler's
+              degree in Information Technology. I am currently learning PHP,
+              MySQL and Laravel as its framework in the bootcamp. I had a work
+              experience at a BPO company right after I graduated at STI, Hence
+              as mentioned above a need for refresher. I worked at the BPO
+              industry for 3 years and received a continuous incentives as I
+              work with my quality.
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>Full Stack </span><br />Web Developer</li>
+                <li><span>MERN Stack</span><br />Developer</li>
+                <br />
+                <li>
+                  <span>HTML | CSS | JavaScript | PHP(ongoing) </span><br />
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>2023 - Current (Bootcamp Training) </span><br />Designed
+                  and created a static mobile friendly portfolio website hosted
+                  in GitHub
+                </li>
+                <li>
+                  <span>2023 - Current (Bootcamp Training) </span
+                  ><br />Developed an E-commerce API using Node and Express.js
+                </li>
+                <li>
+                  <span>2023 - Current (Bootcamp Training) </span><br />Complete
+                  a Full-Stack Application using the MERN Stack
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>Zuitt Coding Bootcamp(2023) </span><br />Full Stack Web
+                  Developer
+                </li>
+                <li>
+                  <span>STI College Pasay - Edsa Taft (2019) </span
+                  ><br />Bachelor of Science in Information Technology
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- services -->
+    <div class="text" id="services">
+      <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Design</h2>
+            <p>
+              Designing a web page using Figma and a responsive mobile friendly
+              webpage
+            </p>
+            <a
+              href="https://emvir1.github.io/Web-Design-Figma/"
+              target="_blank"
+              class="btn"
+              ><b>Learn more</b></a
+            >
+          </div>
+          <div>
+            <i class="fa-solid fa-crop"></i>
+            <h2>Simple E-Commerce API</h2>
+            <p>
+              Created an E-Commerce API using Express.js/REST API and tested
+              using Postman
+            </p>
+            <a
+              href="https://github.com/Emvir1/E-Commerce-API"
+              target="_blank"
+              class="btn"
+              ><b>Learn more</b></a
+            >
+          </div>
+          <div>
+            <i class="fa-brands fa-app-store"></i>
+            <h2>Simple E-commerce Website</h2>
+            <p>
+              Created an E-Commerce website applying the E-Commerce API and
+              using React.JS and rendered in Vercel
+            </p>
+            <a
+              href="https://e-commerce-web-eosin.vercel.app/"
+              target="_blank"
+              class="btn"
+              ><b>Learn more</b></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- portfolio -->
+
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Tools</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/logo-css3.png" />
+          </div>
+          <div class="work">
+            <img src="images/logo-html5.png" />
+          </div>
+          <div class="work">
+            <img src="images/logo-bootstrap.png" />
+          </div>
+          <div class="work">
+            <img src="images/logo-javascript.png" />
+          </div>
+        </div>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/logo-nodejs.png" />
+          </div>
+          <div class="work">
+            <img src="images/logo-mongodb.png" />
+          </div>
+          <div class="work">
+            <img src="images/logo-git.png" />
+          </div>
+          <div class="work">
+            <img src="images/logo-react.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- contact -->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fas fa-paper-plane"></i>riveraemvir@gmail.com</p>
+            <p><i class="fas fa-phone-square-alt"></i>+639218404612</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/Emvir.Rivera" target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://github.com/Emvir1" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/emvir-rivera-49780424b/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+            <a href="images/resume-word.pdf" download class="btn btn2"
+              ><b>Download CV</b></a
+            >
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit" class="btn btn2"><b>Submit</b></button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Created ❤ by Emvir | © 2023</p>
+      </div>
+    </div>
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+      function closemenu() {
+        sidemenu.style.right = "-200px";
+      }
+    </script>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxwNMRQmnS67owcaxLlz9gym4YOSndWMltv5ZMlHjwub0ScfsPlX7uWSFN7o9UdQSEN/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully!";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
