@@ -17,7 +17,7 @@
       <div class="container">
         <nav>
           <img src="images/logo.png" class="logo" />
-          <ul id="sidemenu">
+          <ul id="sidemenu" class="navbar">
             <li><a href="#header">Home</a></li>
             <li><a href="#about">About Me</a></li>
             <li><a href="#services">Projects</a></li>
@@ -108,7 +108,7 @@
         </div>
       </div>
     </div>
-    <!-- services -->
+    <!-- projects -->
     <div class="text" id="services">
       <div class="container">
         <h1 class="sub-title">My Projects</h1>
@@ -193,6 +193,39 @@
         </div>
       </div>
     </div>
+    <div class="text" id="services">
+      <div class="container">
+        <h1 class="sub-title">My Skills and Certificates</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>PHP Short Course</h2>
+            <p>
+              Fundamentals of object-oriented programming namely classes, objects, inheritance, composition, abstraction, encapsulation and polymorphism.
+            </p>
+            <a
+              href="http://share.zertify.zuitt.co/certificate/2e27b654-855d-43b0-b626-9200368b82fb"
+              target="_blank"
+              class="btn"
+              ><b>Click here.</b></a
+            >
+          </div>
+          <div>
+            <i class="fa-solid fa-crop"></i>
+            <h2>MERN Stack</h2>
+            <p>
+              Git, HTML, CSS, Bootstrap, Javascript, MongoDB, NodeJS, ExpressJS and ReactJS. Full-stack Web Development.
+            </p>
+            <a
+              href="http://share.zertify.zuitt.co/certificate/bc7106d4-14fd-430d-9f86-7435cf3897bf"
+              target="_blank"
+              class="btn"
+              ><b>Click here.</b></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- contact -->
     <div id="contact">
@@ -233,7 +266,8 @@
                 rows="6"
                 placeholder="Your Message"
               ></textarea>
-              <button type="submit" class="btn btn2"><b>Submit</b></button>
+              <button type="submit" class="btn btn2"><b>Submit</b>
+              </button>
             </form>
             <span id="msg"></span>
           </div>
@@ -285,5 +319,6 @@
           .catch((error) => console.error("Error!", error.message));
       });
     </script>
+
   </body>
 </html>
