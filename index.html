@@ -18,20 +18,23 @@
         <nav>
           <img src="images/logo.png" class="logo" />
           <ul id="sidemenu" class="navbar">
-            <li><a href="#header">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#services">Projects</a></li>
-            <li><a href="#portfolio">Tools</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <i class="fas fa-times" onclick="closemenu()"></i>
+            <li><a href="#header" onclick="closemenu()">Home</a></li>
+            <li><a href="#about" onclick="closemenu()">About Me</a></li>
+            <li><a href="#services" onclick="closemenu()">Projects</a></li>
+            <li><a href="#portfolio" onclick="closemenu()">Tools</a></li>
+            <li><a href="#contact" onclick="closemenu()">Contact</a></li>
           </ul>
-          <i class="fas fa-bars" onclick="openmenu()"></i>
+          <button class="hamburger" id="hamburger" onclick="togglemenu()" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </nav>
+        <div class="menu-overlay" id="menuOverlay" onclick="closemenu()"></div>
         <div class="header-text" id="front">
-          <p>Full Stack Web Developer</p>
+          <p>Web Developer</p>
           <h1>
-            <span>Hi,</span> I'm Emvir<br />
-            Rivera
+            <span>Hi!</span> I'm Emvir Rivera
           </h1>
         </div>
       </div>
@@ -374,11 +377,29 @@
     </script>
     <script>
       var sidemenu = document.getElementById("sidemenu");
-      function openmenu() {
-        sidemenu.style.right = "0";
+      var hamburger = document.getElementById("hamburger");
+      var menuOverlay = document.getElementById("menuOverlay");
+
+      function togglemenu() {
+        if (sidemenu.classList.contains("open")) {
+          closemenu();
+        } else {
+          openmenu();
+        }
       }
+
+      function openmenu() {
+        sidemenu.classList.add("open");
+        hamburger.classList.add("active");
+        menuOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
       function closemenu() {
-        sidemenu.style.right = "-200px";
+        sidemenu.classList.remove("open");
+        hamburger.classList.remove("active");
+        menuOverlay.classList.remove("active");
+        document.body.style.overflow = "";
       }
     </script>
     <script>
