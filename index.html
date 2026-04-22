@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,27 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emvir Rivera | Web Developer</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/bfc5c28a03.js" crossorigin="anonymous"></script>
+    <!-- Apply saved theme before CSS loads to prevent flash -->
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
+    <script
+      src="https://kit.fontawesome.com/bfc5c28a03.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-
     <!-- HEADER -->
     <div id="header">
       <div class="container">
         <nav id="navbar">
           <img src="images/logo.png" class="logo" alt="Logo" />
           <ul id="sidemenu">
-            <li><a href="#header"   onclick="closemenu()">Home</a></li>
-            <li><a href="#about"    onclick="closemenu()">About</a></li>
+            <li><a href="#header" onclick="closemenu()">Home</a></li>
+            <li><a href="#about" onclick="closemenu()">About</a></li>
             <li><a href="#services" onclick="closemenu()">Projects</a></li>
             <li><a href="#portfolio" onclick="closemenu()">Tools</a></li>
-            <li><a href="#contact"  onclick="closemenu()">Contact</a></li>
+            <li><a href="#contact" onclick="closemenu()">Contact</a></li>
           </ul>
-          <button class="hamburger" id="hamburger" onclick="togglemenu()" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <div class="nav-actions">
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              onclick="toggleTheme()"
+              aria-label="Toggle dark mode"
+            >
+              <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            <button
+              class="hamburger"
+              id="hamburger"
+              onclick="togglemenu()"
+              aria-label="Toggle menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </nav>
         <div class="menu-overlay" id="menuOverlay" onclick="closemenu()"></div>
         <div class="header-text" id="front">
@@ -50,22 +73,30 @@
           <div class="about-col-2">
             <h1 class="sub-title">About Me</h1>
             <p class="about-text">
-              I'm a backend developer with a strong interest in building reliable and scalable systems.
-              I graduated in 2019 from STI College Taft with a Bachelor's Degree in Information Technology.
-              After graduating, I worked in the BPO industry for three years, developing strong
-              communication skills, attention to detail, and a consistent focus on quality.
+              I'm a backend developer with a strong interest in building
+              reliable and scalable systems. I graduated in 2019 from STI
+              College Taft with a Bachelor's Degree in Information Technology.
+              After graduating, I worked in the BPO industry for three years,
+              developing strong communication skills, attention to detail, and a
+              consistent focus on quality.
             </p>
             <p class="about-text">
-              To refresh and strengthen my technical skills, I enrolled in the Zuitt Coding Bootcamp,
-              where I focused on PHP, MySQL, and Laravel — fully transitioning into a development role.
+              To refresh and strengthen my technical skills, I enrolled in the
+              Zuitt Coding Bootcamp, where I focused on PHP, MySQL, and Laravel
+              — fully transitioning into a development role.
             </p>
             <p class="about-text">
-              I am currently working as a Backend Developer since August 2023, building APIs with Flask,
-              working with PostgreSQL, and handling deployments using AWS Lightsail.
+              I am currently working as a Backend Developer since August 2023,
+              building APIs with Flask, working with PostgreSQL, and handling
+              deployments using AWS Lightsail.
             </p>
             <div class="tab-titles">
-              <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-              <p class="tab-links" onclick="opentab('experience')">Experience</p>
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
               <p class="tab-links" onclick="opentab('education')">Education</p>
             </div>
             <div class="tab-contents active-tab" id="skills">
@@ -80,19 +111,23 @@
               <ul>
                 <li>
                   <span>August 2023 — System Features</span>
-                  Implemented Role-Based Access Control (RBAC) and developed Inventory and Supplier Management modules.
+                  Implemented Role-Based Access Control (RBAC) and developed
+                  Inventory and Supplier Management modules.
                 </li>
                 <li>
                   <span>August 2023 — Hired as Backend Developer</span>
-                  Python Flask, PostgreSQL, AWS Lightsail deployment, Pytest unit and integration tests.
+                  Python Flask, PostgreSQL, AWS Lightsail deployment, Pytest
+                  unit and integration tests.
                 </li>
                 <li>
                   <span>March 2023 — Bootcamp Training</span>
-                  Designed and created a static mobile-friendly portfolio website hosted on GitHub.
+                  Designed and created a static mobile-friendly portfolio
+                  website hosted on GitHub.
                 </li>
                 <li>
                   <span>March 2023 — Bootcamp Training</span>
-                  Built an E-commerce API using Node/Express.js and a full-stack MERN application.
+                  Built an E-commerce API using Node/Express.js and a full-stack
+                  MERN application.
                 </li>
                 <li>
                   <span>April 2023 — Bootcamp Training</span>
@@ -129,32 +164,69 @@
           <div>
             <i class="fa-solid fa-code"></i>
             <h2>Web Design</h2>
-            <p>Designing a web page using Figma and building a responsive, mobile-friendly webpage.</p>
-            <a href="https://emvir1.github.io/Web-Design-Figma/" target="_blank" class="btn">View Project</a>
+            <p>
+              Designing a web page using Figma and building a responsive,
+              mobile-friendly webpage.
+            </p>
+            <a
+              href="https://emvir1.github.io/Web-Design-Figma/"
+              target="_blank"
+              class="btn"
+              >View Project</a
+            >
           </div>
           <div>
             <i class="fa-solid fa-cart-shopping"></i>
             <h2>E-Commerce API</h2>
-            <p>E-Commerce REST API built with Express.js and tested using Postman.</p>
-            <a href="https://github.com/Emvir1/E-Commerce-API" target="_blank" class="btn">View Project</a>
+            <p>
+              E-Commerce REST API built with Express.js and tested using
+              Postman.
+            </p>
+            <a
+              href="https://github.com/Emvir1/E-Commerce-API"
+              target="_blank"
+              class="btn"
+              >View Project</a
+            >
           </div>
           <div>
             <i class="fa-brands fa-react"></i>
             <h2>E-Commerce Website</h2>
-            <p>Full E-Commerce website powered by the E-Commerce API, built with React.JS and deployed on Vercel.</p>
-            <a href="https://e-commerce-web-ten-bice.vercel.app/" target="_blank" class="btn">View Project</a>
+            <p>
+              Full E-Commerce website powered by the E-Commerce API, built with
+              React.JS and deployed on Vercel.
+            </p>
+            <a
+              href="https://e-commerce-web-ten-bice.vercel.app/"
+              target="_blank"
+              class="btn"
+              >View Project</a
+            >
           </div>
           <div>
             <i class="fa-solid fa-flask"></i>
             <h2>Flask API</h2>
             <p>A simple Flask REST API built and tested using Postman.</p>
-            <a href="https://github.com/Emvir1/zendo-backend" target="_blank" class="btn">View Project</a>
+            <a
+              href="https://github.com/Emvir1/zendo-backend"
+              target="_blank"
+              class="btn"
+              >View Project</a
+            >
           </div>
           <div>
             <i class="fa-solid fa-list-check"></i>
             <h2>Task Manager App</h2>
-            <p>React frontend with Flask REST API backend and PostgreSQL — full CRUD task management with modular architecture.</p>
-            <a href="https://zendo-app-ten.vercel.app" target="_blank" class="btn">View Project</a>
+            <p>
+              React frontend with Flask REST API backend and PostgreSQL — full
+              CRUD task management with modular architecture.
+            </p>
+            <a
+              href="https://zendo-app-ten.vercel.app"
+              target="_blank"
+              class="btn"
+              >View Project</a
+            >
           </div>
         </div>
       </div>
@@ -165,17 +237,54 @@
       <div class="container">
         <h1 class="sub-title">My Tools</h1>
         <div class="work-list">
-          <div class="work"><img src="images/logo-html5.png"           alt="HTML5"       /><span>HTML5</span></div>
-          <div class="work"><img src="images/logo-css3.png"            alt="CSS3"        /><span>CSS3</span></div>
-          <div class="work"><img src="images/logo-javascript.png"      alt="JavaScript"  /><span>JavaScript</span></div>
-          <div class="work"><img src="images/logo-bootstrap.png"       alt="Bootstrap"   /><span>Bootstrap</span></div>
-          <div class="work"><img src="images/logo-react.png"           alt="React"       /><span>React</span></div>
-          <div class="work"><img src="images/logo-nodejs.png"          alt="Node.js"     /><span>Node.js</span></div>
-          <div class="work"><img src="images/logo-mongodb.png"         alt="MongoDB"     /><span>MongoDB</span></div>
-          <div class="work"><img src="images/python-logo-only.png"     alt="Python"      /><span>Python</span></div>
-          <div class="work"><img src="images/elephant.png"             alt="PostgreSQL"  /><span>PostgreSQL</span></div>
-          <div class="work"><img src="images/amazon-lightsail-logo.png" alt="AWS Lightsail" /><span>AWS Lightsail</span></div>
-          <div class="work"><img src="images/logo-git.png"             alt="Git"         /><span>Git</span></div>
+          <div class="work">
+            <img src="images/logo-html5.png" alt="HTML5" /><span>HTML5</span>
+          </div>
+          <div class="work">
+            <img src="images/logo-css3.png" alt="CSS3" /><span>CSS3</span>
+          </div>
+          <div class="work">
+            <img src="images/logo-javascript.png" alt="JavaScript" /><span
+              >JavaScript</span
+            >
+          </div>
+          <div class="work">
+            <img src="images/logo-bootstrap.png" alt="Bootstrap" /><span
+              >Bootstrap</span
+            >
+          </div>
+          <div class="work">
+            <img src="images/logo-react.png" alt="React" /><span>React</span>
+          </div>
+          <div class="work">
+            <img src="images/logo-nodejs.png" alt="Node.js" /><span
+              >Node.js</span
+            >
+          </div>
+          <div class="work">
+            <img src="images/logo-mongodb.png" alt="MongoDB" /><span
+              >MongoDB</span
+            >
+          </div>
+          <div class="work">
+            <img src="images/python-logo-only.png" alt="Python" /><span
+              >Python</span
+            >
+          </div>
+          <div class="work">
+            <img src="images/elephant.png" alt="PostgreSQL" /><span
+              >PostgreSQL</span
+            >
+          </div>
+          <div class="work">
+            <img
+              src="images/amazon-lightsail-logo.png"
+              alt="AWS Lightsail"
+            /><span>AWS Lightsail</span>
+          </div>
+          <div class="work">
+            <img src="images/logo-git.png" alt="Git" /><span>Git</span>
+          </div>
         </div>
       </div>
     </div>
@@ -188,26 +297,58 @@
           <div>
             <i class="fa-brands fa-php"></i>
             <h2>PHP Short Course</h2>
-            <p>OOP fundamentals — classes, objects, inheritance, composition, abstraction, encapsulation and polymorphism.</p>
-            <a href="http://share.zertify.zuitt.co/certificate/2e27b654-855d-43b0-b626-9200368b82fb" target="_blank" class="btn">View Certificate</a>
+            <p>
+              OOP fundamentals — classes, objects, inheritance, composition,
+              abstraction, encapsulation and polymorphism.
+            </p>
+            <a
+              href="http://share.zertify.zuitt.co/certificate/2e27b654-855d-43b0-b626-9200368b82fb"
+              target="_blank"
+              class="btn"
+              >View Certificate</a
+            >
           </div>
           <div>
             <i class="fa-solid fa-layer-group"></i>
             <h2>MERN Stack</h2>
-            <p>Git, HTML, CSS, Bootstrap, JavaScript, MongoDB, NodeJS, ExpressJS and ReactJS. Full-stack Web Development.</p>
-            <a href="http://share.zertify.zuitt.co/certificate/bc7106d4-14fd-430d-9f86-7435cf3897bf" target="_blank" class="btn">View Certificate</a>
+            <p>
+              Git, HTML, CSS, Bootstrap, JavaScript, MongoDB, NodeJS, ExpressJS
+              and ReactJS. Full-stack Web Development.
+            </p>
+            <a
+              href="http://share.zertify.zuitt.co/certificate/bc7106d4-14fd-430d-9f86-7435cf3897bf"
+              target="_blank"
+              class="btn"
+              >View Certificate</a
+            >
           </div>
           <div>
             <i class="fa-brands fa-laravel"></i>
             <h2>Laravel Short Course</h2>
-            <p>Full-stack web application implementing the Model-View-Controller architecture.</p>
-            <a href="http://share.zertify.zuitt.co/certificate/2c0e228f-b85f-41f6-a1dd-ea005899baa3" target="_blank" class="btn">View Certificate</a>
+            <p>
+              Full-stack web application implementing the Model-View-Controller
+              architecture.
+            </p>
+            <a
+              href="http://share.zertify.zuitt.co/certificate/2c0e228f-b85f-41f6-a1dd-ea005899baa3"
+              target="_blank"
+              class="btn"
+              >View Certificate</a
+            >
           </div>
           <div>
             <i class="fa-brands fa-aws"></i>
             <h2>AWS</h2>
-            <p>Foundational concepts, EC2, S3 and full-stack application deployment to AWS.</p>
-            <a href="http://share.zertify.zuitt.co/certificate/0d98bb17-bb46-4244-9f32-1cc501b9444c" target="_blank" class="btn">View Certificate</a>
+            <p>
+              Foundational concepts, EC2, S3 and full-stack application
+              deployment to AWS.
+            </p>
+            <a
+              href="http://share.zertify.zuitt.co/certificate/0d98bb17-bb46-4244-9f32-1cc501b9444c"
+              target="_blank"
+              class="btn"
+              >View Certificate</a
+            >
           </div>
         </div>
       </div>
@@ -218,15 +359,41 @@
       <div class="container">
         <div class="contact-wrapper">
           <h2 class="contact-title">Let's Connect</h2>
-          <p class="contact-subtitle">Feel free to reach out or follow me on my socials.</p>
+          <p class="contact-subtitle">
+            Feel free to reach out or follow me on my socials.
+          </p>
           <div class="social-links">
-            <a href="https://www.facebook.com/Emvir.Rivera" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://github.com/Emvir1" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/emvir-rivera-49780424b/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=riveraemvir@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <a href="tel:+639218404612" aria-label="Phone"><i class="fas fa-phone"></i></a>
+            <a
+              href="https://www.facebook.com/Emvir.Rivera"
+              target="_blank"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="https://github.com/Emvir1"
+              target="_blank"
+              aria-label="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/emvir-rivera-49780424b/"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=riveraemvir@gmail.com"
+              target="_blank"
+              aria-label="Email"
+              ><i class="fas fa-envelope"></i
+            ></a>
+            <a href="tel:+639218404612" aria-label="Phone"
+              ><i class="fas fa-phone"></i
+            ></a>
           </div>
-          <a href="images/Rivera.pdf" download class="btn btn2">Download CV</a>
+          <a href="images/Emvir_Rivera.pdf" download class="btn btn2"
+            >Download CV</a
+          >
         </div>
         <div class="copyright">
           <p>Crafted with ❤ by Emvir Rivera &nbsp;|&nbsp; © 2024</p>
@@ -235,16 +402,53 @@
     </div>
 
     <!-- SCROLL TO TOP -->
-    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()" aria-label="Back to top">
+    <button
+      class="scroll-top"
+      id="scrollTop"
+      onclick="scrollToTop()"
+      aria-label="Back to top"
+    >
       <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- DARK / LIGHT THEME -->
+    <script>
+      // Sync icon with current theme on load
+      (function () {
+        if (document.documentElement.getAttribute("data-theme") === "dark") {
+          document.getElementById("themeIcon").className = "fas fa-sun";
+        }
+      })();
+
+      function toggleTheme() {
+        var html = document.documentElement;
+        var icon = document.getElementById("themeIcon");
+        var isDark = html.getAttribute("data-theme") === "dark";
+
+        // Brief transition class so only the toggle causes smooth color change
+        document.body.classList.add("theme-transitioning");
+        setTimeout(function () {
+          document.body.classList.remove("theme-transitioning");
+        }, 350);
+
+        if (isDark) {
+          html.removeAttribute("data-theme");
+          icon.className = "fas fa-moon";
+          localStorage.setItem("theme", "light");
+        } else {
+          html.setAttribute("data-theme", "dark");
+          icon.className = "fas fa-sun";
+          localStorage.setItem("theme", "dark");
+        }
+      }
+    </script>
+
     <!-- TABS -->
     <script>
-      var tablinks   = document.getElementsByClassName("tab-links");
+      var tablinks = document.getElementsByClassName("tab-links");
       var tabcontents = document.getElementsByClassName("tab-contents");
       function opentab(tabname) {
-        for (var tl of tablinks)   tl.classList.remove("active-link");
+        for (var tl of tablinks) tl.classList.remove("active-link");
         for (var tc of tabcontents) tc.classList.remove("active-tab");
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
@@ -253,8 +457,8 @@
 
     <!-- HAMBURGER -->
     <script>
-      var sidemenu   = document.getElementById("sidemenu");
-      var hamburger  = document.getElementById("hamburger");
+      var sidemenu = document.getElementById("sidemenu");
+      var hamburger = document.getElementById("hamburger");
       var menuOverlay = document.getElementById("menuOverlay");
 
       function togglemenu() {
@@ -276,7 +480,7 @@
 
     <!-- NAV GLASS + SCROLL-TO-TOP -->
     <script>
-      var navbar     = document.getElementById("navbar");
+      var navbar = document.getElementById("navbar");
       var scrollTopBtn = document.getElementById("scrollTop");
 
       window.addEventListener("scroll", function () {
@@ -297,16 +501,20 @@
     <!-- FADE-IN ON SCROLL -->
     <script>
       var fadeEls = document.querySelectorAll(".fade-in");
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.08 });
-      fadeEls.forEach(function (el) { observer.observe(el); });
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08 },
+      );
+      fadeEls.forEach(function (el) {
+        observer.observe(el);
+      });
     </script>
-
   </body>
 </html>
